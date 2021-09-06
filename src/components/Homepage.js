@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -24,7 +23,7 @@ const Homepage = () => {
           <li key={d[0]}>
             <Link to={{
               pathname: '/details',
-              search: d[0],
+              search: `country=${d[0]}`,
             }}
             >
               {d[0]}
