@@ -1,0 +1,14 @@
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #4369b2;
+  height: 36px;
+  padding: 0 9px;
+}
+
+.main-header-title {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #fff;
+}
