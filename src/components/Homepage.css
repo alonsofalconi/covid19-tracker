@@ -11,18 +11,26 @@
 
 .home-list li:nth-child(1) {
   background: #5687e3;
+  height: 120px;
 }
 
 .home-list div:nth-child(2) {
   background: #35548b;
+  height: 18px;
 }
 
-.home-list li:nth-child(3n + 3){
+.home-list li:nth-child(1n + 3) {
+  height: 120px;
+}
+
+.home-list li:nth-child(4n + 3),
+.home-list li:nth-child(4n + 6) {
   background: #4268af;
 }
 
-.home-list li:nth-child(3n + 4) {
-  background: #3f62a5;
+.home-list li:nth-child(4n + 4),
+.home-list li:nth-child(4n + 5) {
+  background: #3e61a4;
 }
 
 .home-list a {
