@@ -4,7 +4,7 @@ import logger from 'redux-logger';
 import dataReducer from './covidData/covidData';
 
 const rootReducer = combineReducers({
-  data: dataReducer,
+  covidData: dataReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));
