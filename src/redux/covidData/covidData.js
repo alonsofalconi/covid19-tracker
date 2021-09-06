@@ -13,4 +13,15 @@ const dataReducer = (state = initialState, action) => {
   }
 };
 
+const getDataAction = (payload) => ({
+  type: GET_DATA,
+  payload,
+});
+
+export const getData = () => (dispatch) => {
+  narrativaAPI.getDataByDate().then((res) => {
+    dispatch(getDataAction(res));
+  });
+};
+
 export default dataReducer;
