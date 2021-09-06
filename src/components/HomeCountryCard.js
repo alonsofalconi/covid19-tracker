@@ -6,7 +6,7 @@ const HomeCountryCard = (props) => {
   const { country, newConfirmed } = props;
 
   return (
-    <li key={country}>
+    <li key={country} className="country-card-item">
       <Link to={{ pathname: '/details', search: `country=${country}` }}>
         {country}
         {newConfirmed}

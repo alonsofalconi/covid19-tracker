@@ -18,8 +18,21 @@ const Homepage = () => {
   return (
     <main>
       <ul className="home-list">
-        <li>{data.length === 0 ? null : data[Math.round(Math.random() * data.length)][0]}</li>
-        <div>{data.length === 0 ? null : <p>STATS BY COUNTRY</p>}</div>
+        {
+          data.length === 0
+            ? null
+            : (
+              <li className="home-main-item">
+                <div className="main-item-image">
+                  {data[Math.round(Math.random() * data.length)][0]}
+                </div>
+                <div className="main-item-name">
+                  {data[Math.round(Math.random() * data.length)][0]}
+                </div>
+              </li>
+            )
+        }
+        {data.length === 0 ? null : <div className="home-top-divider"><p>STATS BY COUNTRY</p></div>}
         {data.map((d) => (
           <HomeCountryCard
             key={d[0]}
