@@ -23,9 +23,7 @@ const Homepage = () => {
             ? null
             : (
               <li className="home-main-item">
-                <div className="main-item-image">
-                  {data[Math.round(Math.random() * data.length)][0]}
-                </div>
+                <div className="main-item-image" />
                 <div className="main-item-name">
                   {data[Math.round(Math.random() * data.length)][0]}
                 </div>

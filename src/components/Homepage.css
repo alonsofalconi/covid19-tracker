@@ -15,6 +15,15 @@
   height: 120px;
 }
 
+.main-item-image,
+.main-item-name {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 50%;
+}
+
 .home-top-divider {
   background: #35548b;
   height: 18px;
