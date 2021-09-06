@@ -9,7 +9,7 @@ const HomeCountryCard = (props) => {
   return (
     <li key={country} className="country-card-item">
       <div>
-        <Link to={{ pathname: '/details', search: `country=${country}` }}>
+        <Link to={{ pathname: '/details', search: `country=${country}` }} className="home-arrow-icon">
           <ArrowCircleRight />
         </Link>
       </div>
