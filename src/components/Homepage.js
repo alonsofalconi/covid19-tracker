@@ -1,6 +1,8 @@
+/* eslint-disable */
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import './Homepage.css';
 import { getData } from '../redux/covidData/covidData';
 
 const Homepage = () => {
@@ -16,7 +18,8 @@ const Homepage = () => {
 
   return (
     <main>
-      <ul>
+      <ul className="home-list">
+        <li>{data.length === 0 ? null : data[Math.round(Math.random() * data.length)][0]}</li>
         {data.map((d) => (
           <li key={d[0]}>
             <Link to={{
