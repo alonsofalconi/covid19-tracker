@@ -7,12 +7,12 @@ const Header = () => {
   const history = useHistory();
 
   return (
-    <header className="main-header">
+    <header className="header">
       {location.pathname === '/details'
-        ? <button type="button" aria-label="back" className="main-header-back-icon" onClick={() => history.goBack()}><ChevronLeftIcon className="chevron-left-icon" /></button>
+        ? <button type="button" aria-label="Go back" className="header-back-icon" onClick={() => history.goBack()}><ChevronLeftIcon /></button>
         : <div />}
       <div>
-        <h1 className="main-header-title">COVID-19 Tracker</h1>
+        <h1 className="header-title">COVID-19 Tracker</h1>
       </div>
       <div />
     </header>

@@ -1,4 +1,4 @@
-.main-header {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,16 +7,14 @@
   padding: 0 9px;
 }
 
-.main-header-back-icon {
+.header-back-icon {
   border: none;
   background: none;
-}
-
-.chevron-left-icon {
+  cursor: pointer;
   margin-right: -24px;
 }
 
-.main-header-title {
+.header-title {
   font-size: 1.8rem;
   font-weight: 400;
   color: #fff;
