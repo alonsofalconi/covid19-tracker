@@ -9,16 +9,27 @@ const Homepage = () => {
   const data = useSelector((state) => state.covidData);
 
   useEffect(() => {
-    if (Object.keys(data).length === 0) {
+    if (data.length === 0) {
       dispatch(getData());
     }
   }, []);
 
   return (
-    <>
-      <h1>Homepage</h1>
-      <Link to="/details">Details</Link>
-    </>
+    <main>
+      <ul>
+        {data.map((d) => (
+          <li key={d[0]}>
+            <Link to={{
+              pathname: '/details',
+              search: d[0],
+            }}
+            >
+              {d[0]}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </main>
   );
 };
 
