@@ -15,6 +15,8 @@ const Homepage = () => {
     }
   }, []);
 
+  const randomNum = Math.round(Math.random() * data.length);
+
   return (
     <main>
       <ul className="home-list">
@@ -25,7 +27,8 @@ const Homepage = () => {
               <li className="home-main-item">
                 <div className="main-item-image" />
                 <div className="main-item-name">
-                  {data[Math.round(Math.random() * data.length)][0]}
+                  <h2>{data[randomNum][0]}</h2>
+                  <p className="main-item-info">{`${data[randomNum][1].today_new_confirmed} new cases`}</p>
                 </div>
               </li>
             )
