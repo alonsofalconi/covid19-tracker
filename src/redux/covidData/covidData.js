@@ -20,7 +20,10 @@ const getDataAction = (payload) => ({
 
 export const getData = () => (dispatch) => {
   narrativaAPI.getDataByDate().then((res) => {
-    dispatch(getDataAction(res));
+    dispatch(getDataAction({
+      date: res.total.date,
+      countries: res.dates[res.total.date].countries,
+    }));
   });
 };
 
