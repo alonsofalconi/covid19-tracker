@@ -41,21 +41,3 @@
   font-size: 1.2rem;
   margin-left: 9px;
 }
-
-.country-card-item {
-  height: 135px;
-}
-
-.country-card-item:nth-child(4n + 3),
-.country-card-item:nth-child(4n + 6) {
-  background: #4268af;
-}
-
-.country-card-item:nth-child(4n + 4),
-.country-card-item:nth-child(4n + 5) {
-  background: #3e61a4;
-}
-
-.home-list a {
-  text-decoration: none;
-}

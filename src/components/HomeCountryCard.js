@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import './HomeCountryCard.css';
 import { ReactComponent as ArrowCircleRight } from './assets/icons/arrow-circle-right.svg';
 
 const HomeCountryCard = (props) => {
@@ -7,7 +8,11 @@ const HomeCountryCard = (props) => {
 
   return (
     <li key={country} className="country-card-item">
-      <div><ArrowCircleRight /></div>
+      <div>
+        <Link to={{ pathname: '/details', search: `country=${country}` }}>
+          <ArrowCircleRight />
+        </Link>
+      </div>
       <div>
         <Link to={{ pathname: '/details', search: `country=${country}` }}>
           {country}
