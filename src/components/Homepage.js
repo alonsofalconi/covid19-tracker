@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getData } from '../redux/covidData/covidData';
 import './Homepage.css';
 import HomeCountryCard from './HomeCountryCard';
@@ -27,7 +28,7 @@ const Homepage = () => {
               <li className="home-main-item">
                 <div className="main-item-image" />
                 <div className="main-item-name">
-                  <h2>{data[randomNum][0]}</h2>
+                  <Link to={{ pathname: '/details', search: `country=${data[randomNum][0]}` }}>{data[randomNum][0]}</Link>
                   <p className="main-item-info">{`${data[randomNum][1].today_new_confirmed} new cases`}</p>
                 </div>
               </li>

@@ -22,9 +22,13 @@
   margin: auto 18px;
 }
 
-.main-item-name h2 {
+.main-item-name a {
+  text-decoration: none;
   text-transform: uppercase;
+  cursor: pointer;
+  color: #fff;
   font-size: 2.1rem;
+  font-weight: 700;
   margin-top: 4px;
 }
 
