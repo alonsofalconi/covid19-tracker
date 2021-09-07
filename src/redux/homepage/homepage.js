@@ -13,7 +13,7 @@ const dataReducer = (state = initialState, action) => {
   }
 };
 
-const getDataAction = (payload) => ({
+export const getDataAction = (payload) => ({
   type: GET_DATA,
   payload,
 });
