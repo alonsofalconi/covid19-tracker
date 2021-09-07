@@ -33,7 +33,7 @@ const Details = () => {
       {
         country.length === 0
           ? <p className="no-data">NO DATA</p>
-          : null
+          : <div className="details-top-divider"><p>{`${countryName} STATS`}</p></div>
       }
     </main>
   );

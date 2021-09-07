@@ -18,3 +18,16 @@
   left: 50%;
   transform: translate(-50%, -60%);
 }
+
+.details-top-divider {
+  background: #35548b;
+  height: 18px;
+}
+
+.details-top-divider p {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 4px 0 0 9px;
+}
