@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import './Details.css';
 import { filterData } from '../redux/details/details';
 
@@ -14,8 +14,6 @@ const Details = () => {
     dispatch(filterData(country[0][1]));
   }
 
-  const history = useHistory();
-
   return (
     <main>
       <div className="details-main-item">
@@ -24,7 +22,6 @@ const Details = () => {
           <h2>{countryName}</h2>
         </div>
       </div>
-      <button type="button" onClick={() => history.goBack()}>Go Back</button>
     </main>
   );
 };
