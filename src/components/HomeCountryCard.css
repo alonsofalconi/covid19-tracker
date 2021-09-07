@@ -1,5 +1,6 @@
 .country-card-item {
   height: 135px;
+  padding: 3px 6px;
 }
 
 .country-card-item:nth-child(4n + 3),
@@ -15,5 +16,4 @@
 .home-arrow-icon {
   text-align: right;
   display: block;
-  margin: 3px 6px;
 }
