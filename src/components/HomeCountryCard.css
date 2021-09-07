@@ -12,6 +12,8 @@
   background: #3e61a4;
 }
 
-.home-list a {
-  text-decoration: none;
+.home-arrow-icon {
+  text-align: right;
+  display: block;
+  margin: 3px 6px;
 }
