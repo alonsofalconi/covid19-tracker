@@ -1,22 +1,30 @@
 .country-card-item {
-  height: 135px;
+  height: 162px;
   padding: 3px 6px;
 }
 
 .country-card-item:nth-child(4n + 3),
 .country-card-item:nth-child(4n + 6) {
   background: #4268af;
+  background-image: url('./assets/images/virus-cards.svg');
+  background-size: auto 81px;
+  background-repeat: no-repeat;
+  background-position: 50% 18%;
 }
 
 .country-card-item:nth-child(4n + 4),
 .country-card-item:nth-child(4n + 5) {
   background: #3e61a4;
+  background-image: url('./assets/images/mask-cards.svg');
+  background-size: auto 81px;
+  background-repeat: no-repeat;
+  background-position: 50% 18%;
 }
 
 .home-arrow-icon {
   text-align: right;
   display: block;
-  height: 63%;
+  height: 72%;
 }
 
 .home-card-text {
