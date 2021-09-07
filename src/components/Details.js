@@ -16,9 +16,11 @@ const Details = () => {
       todayCases: filteredCountry[0][1].today_confirmed,
       todayRecovered: filteredCountry[0][1].today_recovered,
       todayDeaths: filteredCountry[0][1].today_deaths,
+      todayOpenCases: filteredCountry[0][1].today_open_cases,
       todayNewCases: filteredCountry[0][1].today_new_confirmed,
       todayNewRecovered: filteredCountry[0][1].today_new_recovered,
       todayNewDeaths: filteredCountry[0][1].today_new_deaths,
+      todayNewOpenCases: filteredCountry[0][1].today_new_open_cases,
     }));
   }
 
@@ -42,7 +44,7 @@ const Details = () => {
               </div>
               <ul className="details-list">
                 <li className="details-list-item">
-                  <p>{`TODAY${String.fromCharCode(39)}S NEW CASES`}</p>
+                  <p>{`TODAY${String.fromCharCode(39)}S NEW CONFIRMED`}</p>
                   <p>{country.todayNewCases}</p>
                 </li>
                 <li className="details-list-item">
@@ -52,6 +54,10 @@ const Details = () => {
                 <li className="details-list-item">
                   <p>{`TODAY${String.fromCharCode(39)}S NEW DEATHS`}</p>
                   <p>{country.todayNewDeaths}</p>
+                </li>
+                <li className="details-list-item">
+                  <p>{`TODAY${String.fromCharCode(39)}S NEW OPEN CASES`}</p>
+                  <p>{country.todayNewOpenCases}</p>
                 </li>
                 <li className="details-list-item">
                   <p>TOTAL CASES</p>
@@ -64,6 +70,10 @@ const Details = () => {
                 <li className="details-list-item">
                   <p>TOTAL DEATHS</p>
                   <p>{country.todayDeaths}</p>
+                </li>
+                <li className="details-list-item">
+                  <p>TOTAL OPEN CASES</p>
+                  <p>{country.todayOpenCases}</p>
                 </li>
               </ul>
             </>
