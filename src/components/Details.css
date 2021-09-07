@@ -31,3 +31,27 @@
   font-weight: 700;
   padding: 4px 0 0 9px;
 }
+
+.details-list {
+  list-style: none;
+}
+
+.details-list-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 12px;
+}
+
+.details-list-item:nth-child(odd) {
+  background: #5687e3;
+}
+
+.details-list-item:nth-child(even) {
+  background: #3e61a4;
+}
+
+.details-list-item p {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}

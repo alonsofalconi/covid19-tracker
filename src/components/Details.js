@@ -7,20 +7,22 @@ const Details = () => {
   const dispatch = useDispatch();
   const searchParams = new URLSearchParams(useLocation().search);
   const countryName = searchParams.get('country');
-  const country = useSelector((state) => state.covidData)
+  const filteredCountry = useSelector((state) => state.covidData)
     .filter((country) => country[0] === countryName);
 
-  if (country.length !== 0) {
+  if (filteredCountry.length !== 0) {
     dispatch(filterData({
-      country: country[0][1].name,
-      todayCases: country[0][1].today_confirmed,
-      todayRecovered: country[0][1].today_recovered,
-      todayDeaths: country[0][1].today_deaths,
-      todayNewCases: country[0][1].today_new_confirmed,
-      todayNewRecovered: country[0][1].today_new_recovered,
-      todayNewDeaths: country[0][1].today_new_deaths,
+      country: filteredCountry[0][1].name,
+      todayCases: filteredCountry[0][1].today_confirmed,
+      todayRecovered: filteredCountry[0][1].today_recovered,
+      todayDeaths: filteredCountry[0][1].today_deaths,
+      todayNewCases: filteredCountry[0][1].today_new_confirmed,
+      todayNewRecovered: filteredCountry[0][1].today_new_recovered,
+      todayNewDeaths: filteredCountry[0][1].today_new_deaths,
     }));
   }
+
+  const country = useSelector((state) => state.filteredData);
 
   return (
     <main>
@@ -31,9 +33,41 @@ const Details = () => {
         </div>
       </div>
       {
-        country.length === 0
+        Object.keys(country).length === 0
           ? <p className="no-data">NO DATA</p>
-          : <div className="details-top-divider"><p>{`${countryName} STATS`}</p></div>
+          : (
+            <>
+              <div className="details-top-divider">
+                <p>{`${countryName} STATS`}</p>
+              </div>
+              <ul className="details-list">
+                <li className="details-list-item">
+                  <p>{`TODAY${String.fromCharCode(39)}S NEW CASES`}</p>
+                  <p>{country.todayNewCases}</p>
+                </li>
+                <li className="details-list-item">
+                  <p>{`TODAY${String.fromCharCode(39)}S NEW RECOVERED`}</p>
+                  <p>{country.todayNewRecovered}</p>
+                </li>
+                <li className="details-list-item">
+                  <p>{`TODAY${String.fromCharCode(39)}S NEW DEATHS`}</p>
+                  <p>{country.todayNewDeaths}</p>
+                </li>
+                <li className="details-list-item">
+                  <p>TOTAL CASES</p>
+                  <p>{country.todayCases}</p>
+                </li>
+                <li className="details-list-item">
+                  <p>TOTAL RECOVERED</p>
+                  <p>{country.todayRecovered}</p>
+                </li>
+                <li className="details-list-item">
+                  <p>TOTAL DEATHS</p>
+                  <p>{country.todayDeaths}</p>
+                </li>
+              </ul>
+            </>
+          )
       }
     </main>
   );
