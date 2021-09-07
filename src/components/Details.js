@@ -1,6 +1,12 @@
-import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useLocation, useHistory } from 'react-router-dom';
+import { filterData } from '../redux/details/details';
 
 const Details = () => {
+  const dispatch = useDispatch();
+  const searchParams = new URLSearchParams(useLocation().search);
+  dispatch(filterData(searchParams.get('country')));
+
   const history = useHistory();
 
   return (

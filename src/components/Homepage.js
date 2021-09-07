@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getData } from '../redux/covidData/covidData';
+import { getData } from '../redux/homepage/homepage';
 import './Homepage.css';
 import HomeCountryCard from './HomeCountryCard';
 
