@@ -10,6 +10,6 @@ test('should return an array with three elements', () => {
   expect(dataReducer(initialState, getDataAction(['Peru', 'USA', 'Germany']))).toEqual(['Peru', 'USA', 'Germany']);
 });
 
-test('should return an array with one elements', () => {
+test('should return an array with one element', () => {
   expect(dataReducer(initialState, getDataAction(['Peru']))).toEqual(['Peru']);
 });
