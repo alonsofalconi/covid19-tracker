@@ -11,7 +11,15 @@ const Details = () => {
     .filter((country) => country[0] === countryName);
 
   if (country.length !== 0) {
-    dispatch(filterData(country[0][1]));
+    dispatch(filterData({
+      country: country[0][1].name,
+      todayCases: country[0][1].today_confirmed,
+      todayRecovered: country[0][1].today_recovered,
+      todayDeaths: country[0][1].today_deaths,
+      todayNewCases: country[0][1].today_new_confirmed,
+      todayNewRecovered: country[0][1].today_new_recovered,
+      todayNewDeaths: country[0][1].today_new_deaths,
+    }));
   }
 
   return (
@@ -22,6 +30,11 @@ const Details = () => {
           <h2>{countryName}</h2>
         </div>
       </div>
+      {
+        country.length === 0
+          ? <p className="no-data">NO DATA</p>
+          : null
+      }
     </main>
   );
 };
