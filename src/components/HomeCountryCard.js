@@ -13,11 +13,11 @@ const HomeCountryCard = (props) => {
           <ArrowCircleRight />
         </Link>
       </div>
-      <div>
+      <div className="home-card-text">
         <Link to={{ pathname: '/details', search: `country=${country}` }}>
           {country}
-          {newConfirmed}
         </Link>
+        <p>{newConfirmed}</p>
       </div>
     </li>
   );

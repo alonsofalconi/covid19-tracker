@@ -16,4 +16,25 @@
 .home-arrow-icon {
   text-align: right;
   display: block;
+  height: 63%;
+}
+
+.home-card-text {
+  text-align: right;
+  margin-right: 1px;
+}
+
+.home-card-text a {
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.home-card-text p {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
