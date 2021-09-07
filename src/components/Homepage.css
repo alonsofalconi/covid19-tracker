@@ -18,17 +18,21 @@
 .main-item-image,
 .main-item-name {
   color: #fff;
-  width: 50%;
   padding: 0 18px;
   margin: auto 0;
 }
 
 .main-item-image {
+  width: 43%;
   height: 100%;
   background-image: url('./assets/images/virus.svg');
   background-size: auto 99px;
   background-repeat: no-repeat;
   background-position: 99% 50%;
+}
+
+.main-item-name {
+  width: 57%;
 }
 
 .main-item-name a {
