@@ -34,7 +34,18 @@ const Homepage = () => {
               </li>
             )
         }
-        {data.length === 0 ? null : <div className="home-top-divider"><p>STATS BY COUNTRY</p></div>}
+        {
+          data.length === 0
+            ? null
+            : (
+              <div className="home-top-divider">
+                <p>STATS BY COUNTRY</p>
+                <select>
+                  <option value="date">Date</option>
+                </select>
+              </div>
+            )
+        }
         {data.map((d) => (
           <HomeCountryCard
             key={d[0]}
