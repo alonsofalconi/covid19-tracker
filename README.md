@@ -11,7 +11,7 @@ The COVID-19 Tracker web application collects information from different data so
 - [My process](#my-process)
   - [Built with](#built-with)
   - [Useful resources](#useful-resources)
-  - [Acknowledgments](#acknowledgments)
+- [Acknowledgments](#acknowledgments)
 - [Author](#author)
 
 ## Overview
@@ -60,6 +60,7 @@ $ npm run build # Builds the app for production to the `build` folder.
 
 ## Acknowledgments
 
+- Original design idea by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio)
 - Icons from [Material Design](https://materialdesignicons.com)
 
 ## Author
