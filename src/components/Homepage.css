@@ -69,6 +69,7 @@
   background: #5687e3;
   border: 1px solid transparent;
   color: #fff;
+  text-align: right;
 }
 
 .home-top-divider select:focus {

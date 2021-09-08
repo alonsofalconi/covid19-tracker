@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getData } from '../redux/homepage/homepage';
+import { filterCountries } from '../redux/filter/filter';
 import './Homepage.css';
 import HomeCountryCard from './HomeCountryCard';
 
@@ -17,6 +18,12 @@ const Homepage = () => {
   }, []);
 
   const randomNum = Math.round(Math.random() * data.length);
+
+  const handleSelection = (e) => {
+    dispatch(filterCountries(e.target.value));
+  };
+
+  const countries = useSelector((state) => state.filterCountry);
 
   return (
     <main>
@@ -40,8 +47,12 @@ const Homepage = () => {
             : (
               <div className="home-top-divider">
                 <p>STATS BY COUNTRY</p>
-                <select>
-                  <option value="date">Date</option>
+                <select value={countries} onChange={(e) => handleSelection(e)}>
+                  <option value="all">All</option>
+                  <option value="0">0 - 100</option>
+                  <option value="101">101 - 500</option>
+                  <option value="501">501 - 1000</option>
+                  <option value="1000">1000+</option>
                 </select>
               </div>
             )
