@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #4369b2;
+  height: 36px;
+  padding: 0 9px;
+}
+
+.header-back-icon {
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-right: -24px;
+}
+
+.header-title {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #fff;
+  margin-top: 3px;
+}

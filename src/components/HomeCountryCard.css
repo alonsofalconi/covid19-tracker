@@ -1,0 +1,48 @@
+.country-card-item {
+  height: 162px;
+  padding: 3px 6px;
+}
+
+.country-card-item:nth-child(4n + 3),
+.country-card-item:nth-child(4n + 6) {
+  background: #4268af;
+  background-image: url('./assets/images/virus-cards.svg');
+  background-size: auto 81px;
+  background-repeat: no-repeat;
+  background-position: 50% 18%;
+}
+
+.country-card-item:nth-child(4n + 4),
+.country-card-item:nth-child(4n + 5) {
+  background: #3e61a4;
+  background-image: url('./assets/images/mask-cards.svg');
+  background-size: auto 81px;
+  background-repeat: no-repeat;
+  background-position: 50% 18%;
+}
+
+.home-arrow-icon {
+  text-align: right;
+  display: block;
+  height: 72%;
+}
+
+.home-card-text {
+  text-align: right;
+  margin-right: 1px;
+}
+
+.home-card-text a {
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.home-card-text p {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
