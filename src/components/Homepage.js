@@ -10,6 +10,7 @@ const Homepage = () => {
   const dispatch = useDispatch();
 
   const data = useSelector((state) => state.covidData);
+  const countries = useSelector((state) => state.countries);
 
   useEffect(() => {
     if (data.length === 0) {
@@ -17,47 +18,49 @@ const Homepage = () => {
     }
   }, []);
 
-  const randomNum = Math.round(Math.random() * data.length);
-
   const handleSelection = (e) => {
-    dispatch(filterCountries(e.target.value));
+    dispatch(filterCountries({ value: e.target.value, data }));
   };
 
-  const countries = useSelector((state) => state.filterCountry);
+  const dataToUse = countries.filtered.length === 0 ? data : countries.filtered;
+  const randomNum = Math.round(Math.random() * dataToUse.length);
 
   return (
     <main>
       <ul className="home-list">
         {
-          data.length === 0
+          dataToUse.length === 0
             ? null
             : (
               <li className="home-main-item">
                 <div className="main-item-image" />
                 <div className="main-item-name">
-                  <Link to={{ pathname: '/details', search: `country=${data[randomNum][0]}` }}>{data[randomNum][0]}</Link>
-                  <p className="main-item-info">{`${data[randomNum][1].today_new_confirmed} new cases`}</p>
+                  <Link to={{ pathname: '/details', search: `country=${dataToUse[randomNum][0]}` }}>{dataToUse[randomNum][0]}</Link>
+                  <p className="main-item-info">{`${dataToUse[randomNum][1].today_new_confirmed} new cases`}</p>
                 </div>
               </li>
             )
         }
         {
-          data.length === 0
+          dataToUse.length === 0
             ? null
             : (
               <div className="home-top-divider">
                 <p>STATS BY COUNTRY</p>
-                <select value={countries} onChange={(e) => handleSelection(e)}>
-                  <option value="all">All</option>
-                  <option value="0">0 - 100</option>
-                  <option value="101">101 - 500</option>
-                  <option value="501">501 - 1000</option>
-                  <option value="1000">1000+</option>
-                </select>
+                <label htmlFor="filter-select">
+                  Filter
+                  <select value={countries.value} onChange={(e) => handleSelection(e)} id="filter-select">
+                    <option value="all">All</option>
+                    <option value="0">0 - 100</option>
+                    <option value="101">101 - 500</option>
+                    <option value="501">501 - 1000</option>
+                    <option value="1000">1000+</option>
+                  </select>
+                </label>
               </div>
             )
         }
-        {data.map((d) => (
+        {dataToUse.map((d) => (
           <HomeCountryCard
             key={d[0]}
             country={d[0]}
