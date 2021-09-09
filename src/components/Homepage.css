@@ -65,11 +65,18 @@
   font-weight: 700;
 }
 
+.home-top-divider label {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
 .home-top-divider select {
   background: #5687e3;
   border: 1px solid transparent;
   color: #fff;
   text-align: right;
+  margin-left: 9px;
 }
 
 .home-top-divider select:focus {
