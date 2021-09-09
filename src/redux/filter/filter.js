@@ -1,4 +1,3 @@
-/* eslint-disable */
 const FILTER_COUNTRY = 'redux/filter/FILTER_COUNTRY';
 
 const initialState = {
@@ -8,17 +7,20 @@ const initialState = {
 };
 
 const filtering = (data, value) => {
+  let result;
   if (value === 'all') {
-    return data;
+    result = data;
   } else if (value === '0') {
-    return data.filter((d) => d[1].today_new_confirmed >= 0 && d[1].today_new_confirmed <= 100);
+    result = data.filter((d) => d[1].today_new_confirmed >= 0 && d[1].today_new_confirmed <= 100);
   } else if (value === '101') {
-    return data.filter((d) => d[1].today_new_confirmed >= 101 && d[1].today_new_confirmed <= 500);
+    result = data.filter((d) => d[1].today_new_confirmed >= 101 && d[1].today_new_confirmed <= 500);
   } else if (value === '501') {
-    return data.filter((d) => d[1].today_new_confirmed >= 501 && d[1].today_new_confirmed <= 1000);
+    result = data
+      .filter((d) => d[1].today_new_confirmed >= 501 && d[1].today_new_confirmed <= 1000);
   } else {
-    return data.filter((d) => d[1].today_new_confirmed >= 1001);
+    result = data.filter((d) => d[1].today_new_confirmed >= 1001);
   }
+  return result;
 };
 
 const countryReducer = (state = initialState, action) => {
